@@ -6,6 +6,45 @@
 
 DSL Final Project 2026 - UT Austin
 
+
+## Install environment and check if it is up to date
+
+### 1. Create and activate the Conda environment
+
+```bash
+conda create -n dsl_final_proj python=3.12
+conda activate dsl_final_proj
+```
+
+### 2. Install requirements
+
+From the project root directory, run:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+### 3. Check dependencies
+
+Check for dependency conflicts:
+
+```bash
+python -m pip check
+```
+
+Check if any requirements need installing or updating (without making changes):
+
+```bash
+python -m pip install -r requirements.txt --dry-run
+```
+
+### 4. Update if needed
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+
 ## Project Structure
 
 This project explores reinforcement learning (RL) in a simulated car-driving environment. The repository is organized around the main stages of the RL workflow: environment setup, agent development, training, and evaluation.
