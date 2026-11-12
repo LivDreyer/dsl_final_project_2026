@@ -6,56 +6,60 @@
 
 DSL Final Project 2026 - UT Austin
 
-## Project Organization
+## Project Structure
 
-```
-├── LICENSE            <- Open-source license if one is chosen
-├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
-├── README.md          <- The top-level README for developers using this project.
-├── data
-│   ├── external       <- Data from third party sources.
-│   ├── interim        <- Intermediate data that has been transformed.
-│   ├── processed      <- The final, canonical data sets for modeling.
-│   └── raw            <- The original, immutable data dump.
+This project explores reinforcement learning (RL) in a simulated car-driving environment. The repository is organized around the main stages of the RL workflow: environment setup, agent development, training, and evaluation.
+
+### Directory Overview
+
+```text
+dsl_final_project_2026/
 │
-├── docs               <- A default mkdocs project; see www.mkdocs.org for details
+├── data/
+│   ├── raw/                  # Original data and recorded episodes
+│   ├── interim/              # Intermediate processed data
+│   └── processed/            # Cleaned data ready for analysis
 │
-├── models             <- Trained and serialized models, model predictions, or model summaries
+├── dsl_final_project_2026/   # Main Python package
+│   ├── environments/         # Driving environment and reward functions
+│   ├── agents/               # RL agents and policies
+│   ├── training/             # Agent training scripts
+│   ├── evaluation/           # Evaluation of trained agents
+│   └── utils/                # Reusable helper functions
 │
-├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-│                         the creator's initials, and a short `-` delimited description, e.g.
-│                         `1.0-jqp-initial-data-exploration`.
+├── models/
+│   └── checkpoints/          # Saved model weights and checkpoints
 │
-├── pyproject.toml     <- Project configuration file with package metadata for 
-│                         dsl_final_project_2026 and configuration for tools like black
+├── notebooks/                # Exploratory analysis and experiments
 │
-├── references         <- Data dictionaries, manuals, and all other explanatory materials.
+├── reports/
+│   └── figures/              # Figures used in reports and presentations
 │
-├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-│   └── figures        <- Generated graphics and figures to be used in reporting
+├── configs/                  # Experiment configurations and hyperparameters
 │
-├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-│                         generated with `pip freeze > requirements.txt`
+├── tests/                    # Tests for environment and reward functions
 │
-├── setup.cfg          <- Configuration file for flake8
-│
-└── dsl_final_project_2026   <- Source code for use in this project.
-    │
-    ├── __init__.py             <- Makes dsl_final_project_2026 a Python module
-    │
-    ├── config.py               <- Store useful variables and configuration
-    │
-    ├── dataset.py              <- Scripts to download or generate data
-    │
-    ├── features.py             <- Code to create features for modeling
-    │
-    ├── modeling                
-    │   ├── __init__.py 
-    │   ├── predict.py          <- Code to run model inference with trained models          
-    │   └── train.py            <- Code to train models
-    │
-    └── plots.py                <- Code to create visualizations
+├── requirements.txt          # Python dependencies
+├── pyproject.toml            # Project configuration
+├── Makefile                  # Project automation commands
+└── README.md                 # Project overview and instructions
 ```
 
---------
+### Folder Descriptions
+
+| Directory | Purpose | Examples |
+|---|---|---|
+| `data/` | Stores datasets and files generated or used by the project. | Recorded driving episodes, trajectories, processed observations. |
+| `environments/` | Defines or wraps the driving simulator and its interaction with the agent. | Track setup, observations, action spaces, episode termination. |
+| `agents/` | Contains the agent's decision-making logic and policies. | PPO, DQN, or other RL algorithms. |
+| `training/` | Contains scripts for training agents through interaction with the environment. | Training loops, episode tracking, checkpoint saving. |
+| `evaluation/` | Tests trained agents and measures their performance. | Lap times, completion rates, crashes, average reward. |
+| `utils/` | Contains reusable helper functions. | Plotting, logging, data-processing utilities. |
+| `models/` | Stores trained models and checkpoints. | Saved policy weights and model snapshots. |
+| `notebooks/` | Supports exploration, experimentation, and analysis. | Environment exploration, reward experiments, training analysis. |
+| `configs/` | Stores experiment settings separately from the code. | Learning rate, algorithm choice, training steps. |
+| `tests/` | Contains automated tests to check that important components work correctly. | Environment reset tests, reward-function tests. |
+| `reports/` | Stores final outputs for reports and presentations. | Learning curves, lap-time comparisons, performance plots. |
+| `docs/` | Contains additional project documentation. | Simulator instructions, design decisions, setup notes. |
+
 
