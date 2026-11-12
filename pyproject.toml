@@ -1,0 +1,32 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "dsl_final_project_2026"
+version = "0.0.1"
+description = "DSL Final Project 2026 - UT Austin"
+authors = [
+  { name = "Bhotika, Johansen, Mcgough, Shetty, Zhang" },
+]
+
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    
+]
+requires-python = ">=3.12,<3.13"
+
+
+[tool.ruff]
+line-length = 99
+src = ["dsl_final_project_2026"]
+include = ["pyproject.toml", "dsl_final_project_2026/**/*.py"]
+
+[tool.ruff.lint]
+extend-select = ["I"]  # Add import sorting
+
+[tool.ruff.lint.isort]
+known-first-party = ["dsl_final_project_2026"]
+force-sort-within-sections = true
+
